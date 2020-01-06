@@ -1,6 +1,15 @@
-var x = 0;
-var ans = 0;
-
-ans = 32 / x;
-
-print(ans);
+function captureSyntaxError() {
+  try {
+  	eval('alert("Hello world)');
+  } 
+	catch(error) {
+		if (error.name === 'SyntaxError') {
+  		alert("caught a " + error.name + ": " + error.message);
+			//handle that error type
+		}
+		else {
+			alert("caught a " + error.name + ": " + error.message);
+			//handle generic errors here
+		}
+	}
+}
